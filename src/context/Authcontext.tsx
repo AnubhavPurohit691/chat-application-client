@@ -20,10 +20,10 @@ const AuthContext =createContext<{
 export const AuthContextProvider=({children}:{children:ReactNode})=>{
     const[authUser,setAuthUser]=useState<AuthUserType|null>(null)
     const[isLoading,setisLoading]=useState(true)
-
-    // logic
+  
+    // logic  
     useEffect(()=>{
-        const fetchAuthUser= async ()=>{
+        const fetchAuthUser= async ()=>{ 
             try{
                 const res = await fetch("/api/auth/me")
                 const data= await res.json()
@@ -40,10 +40,8 @@ export const AuthContextProvider=({children}:{children:ReactNode})=>{
                 setisLoading(false)
             }
         }
-    })
-
-
-
+        fetchAuthUser()
+    },[])
     return <AuthContext.Provider value={{
         authUser,isLoading,setAuthUser
     }}>

@@ -7,9 +7,7 @@ import { useAuthContext } from './context/Authcontext'
 
 function App() {
   const {authUser,setAuthUser,isLoading}=useAuthContext()
-  if(isLoading){
-    return <div>loading...</div>
-  }
+ 
   return (
     <div className='p-4 h-screen flex items-center justify-center'>
       <Routes>
