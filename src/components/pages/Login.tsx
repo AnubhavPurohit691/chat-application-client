@@ -7,7 +7,7 @@ export default function Login() {
     email:"",
     password:""
   })
-  const {login}=useLogin()
+  const {loading,login}=useLogin()
   function handleloginform(e:React.FormEvent){
 e.preventDefault()
 login(input)
@@ -50,7 +50,7 @@ login(input)
               type="submit"
               className="w-full rounded-md bg-black py-2 text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
-              Login
+              {loading?"Loading...":"Login"}
             </button>
           </form>
         </div>

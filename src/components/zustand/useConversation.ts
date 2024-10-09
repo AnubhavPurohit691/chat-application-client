@@ -8,10 +8,8 @@ profilePic:string;
 type MessageType={
     id:string;
     body:string;
-    senderId:string;
-    
+    senderId:string;   
 }
-
 interface conversationState{
     selectedConversation:ConversationType|null;
     messages:MessageType[];
@@ -20,7 +18,7 @@ interface conversationState{
 }
 
 const useConversation=create<conversationState>((set)=>({
-    selectedConversation:null,
+    selectedConversation:null, 
     setSelectedConversation:(conversation)=>set({selectedConversation:conversation}),
     messages: [],
     setMessages:(messages)=>set({messages:messages})
