@@ -1,5 +1,4 @@
 import useGetMessages from '../../hooks/useGetMessages'
-import { DUMMY_MESSAGES } from '../dummydata'
 import Message from './Message'
 
 const Messages = () => {
