@@ -8,7 +8,7 @@ const MessageContainer = () => {
   return (
     <div className="w-full flex flex-col">
       {!selectedConversation?(<Nochat/>):(<><div className="">
-            <span className="">To:</span> <span className="text-black font-bold">Johndoe </span>
+            <span className="">To:</span> <span className="text-black font-bold">{selectedConversation.fullName} </span>
       </div>
       <Messages/>
       <Messageinput/></>)}
@@ -17,7 +17,7 @@ const MessageContainer = () => {
 }
 function Nochat(){
   const {authUser}=useAuthContext()
-  return <div>
+  return <div className="justify-center items-center">
         {authUser?.fullName}
   </div>
 }
